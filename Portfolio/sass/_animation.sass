@@ -1,0 +1,55 @@
+/* main: main.sass*/
+
+//universal
+.removed
+  display: none
+.hidden
+  opacity: 0
+.shown
+  opacity: 1
+
+// logo clicker
+.logo:hover
+    cursor: pointer
+
+//enter button, logo and nav
+.enter, .logo, .nav, .nav-bar-bg, .nav-bar
+  transition: all 1s linear
+//slides for enter *landing*
+.slide
+  transition: all 2s cubic-bezier(0,-0.01,.81,.36)
+.up.animate
+  transform: translateY(-100%)
+.down.animate
+  transform: translateY(100%)
+
+//slider
+.slider
+  transition: all 2s ease-in-out
+
+// enter
+//.down
+  .bottomtext
+    .enter:hover
+      cursor: pointer
+      background-position: 0 100%
+      color: $lightest
+
+//nav links
+.nav li
+  a:hover
+    color: $darkest
+    transition: all .2s linear
+.selected
+  a
+    color: $darkest
+    transition: all .5s linear
+
+//underline in nav
+.magic-line
+  position: absolute
+  bottom: 2rem
+  height: 1px
+  border-radius: 100px
+  background-color: $medium
+  transition: all 2s ease-in-out

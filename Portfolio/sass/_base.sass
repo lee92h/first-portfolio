@@ -1,0 +1,209 @@
+/* main: main.sass*/
+
+//reset --------------------------------------------------------
+*
+  margin: 0
+  padding: 0
+  font-size: 16px
+  text-decoration: none
+  font-family: $font-stack1
+
+p, a, ul, li
+  color: $medium
+
+h4
+  font-size: 2rem
+  text-transform: uppercase
+
+//replace with a transparent/hidden scrollbar with jquery for all browser compatibility
+//::-webkit-scrollbar
+      display: none
+
+//extra ----------------------------------------------------------
+body
+  height: 100vh
+  position: relative
+  background-color: $lightest
+  // texture and overlay details below
+  //background-image: $main-texture
+  //.body-overlay
+    position: absolute
+    z-index: -10
+    background-color: white
+    opacity: .7
+    height: 100%
+    width: 100%
+
+
+  //header and footer commons -----------------------------------
+header, footer
+  width: 100%
+  height: 100px
+  background-color: transparent
+
+//header --------------------------------------------------------
+header
+    display: flex
+    .logo
+      margin: auto
+      height: 33px
+      width: 33px
+      padding: .2rem
+
+//container ----------------------------------------------------
+.container
+  position: relative
+  overflow: hidden
+  margin-left: 100px
+  margin-right: 100px
+  height: calc(100% - 200px)
+
+//home landing screen -------------------------------------------
+.slide
+  z-index: 1
+  overflow: hidden
+  width: 100%
+  height: 50%
+  background-color: $lightest
+  img
+    width: 100%
+    height: 200%
+  h1
+    font-size: 9rem
+    line-height: 7rem
+  h2
+    font-size: 3rem
+    font-weight: normal
+    color: $lightest
+    background-color: $dark
+  h3
+    font-size: 1.4rem
+.up
+  position: relative
+  overflow: visible
+  .text
+    position: absolute
+    bottom: 0
+    .toptext
+      padding-bottom: 5px
+      h1, h2, h3
+        display: inline-block
+      h1
+        color: $dark
+
+.down
+  background-color: $dark
+  .bottomtext
+    padding-top: 10px
+    position: relative
+    .surname
+      left: -10px
+      h1
+        overflow: visible
+        color: $lightest
+    .tagline
+      h3
+        display: inline-block
+        color: $lightest
+        padding: 10px 0 0 10px
+        font-weight: lighter
+        letter-spacing: 0.1rem
+        float: left
+      .t2
+        h3
+          padding-left: 45px
+  .enter
+    color: $lightest
+    position: absolute
+    right: 0
+    bottom: 0
+    font-size: 4rem
+    padding-right: 10px
+  img
+    position: relative
+    top: -100%
+
+
+//slider --------------------------------------------------------
+.slider
+  position: absolute
+  top: 0
+  z-index: -1
+  height: 100%
+  //400% because i have 4 slides at 25% of 400% = 4x100 = 400 = 100% a slide at 25%
+  width: 400%
+  display: flex
+  .slides
+    height: 100%
+    width: 100%
+    @extend %bk-values
+    background-color: $lightest
+  //About page--------------------------------------
+  .about
+    // background-color: $darkest
+    position: relative
+    overflow: hidden
+    .uxui-about
+      position: absolute
+      top: -90%
+      left: 10%
+      transform: rotate(-45deg)
+      opacity: 0.1
+      h3
+        font-family: $font-stack2
+        font-size: 60rem
+        line-height: 45rem
+        letter-spacing: 3rem
+    .inner-about
+      position: absolute
+      left: 0
+      z-index: 1
+      display: flex
+      flex-direction: column
+      width: 70%
+      height: 80%
+      margin: 4% 0 4% 4%
+      h4
+        color: $darkest
+        font-size: 5rem
+      p
+        color: $dark
+        font-size: 2rem
+  // Work page -------------------------------------
+  .work
+    // background-color: $dark
+    .grid-container
+      box-sizing: border-box
+      display: grid
+      padding: 3%
+      align-items: center
+      text-align: center
+      grid-template-columns: 1fr 1fr 1fr
+      grid-template-rows: 1fr 1fr 1fr
+    p
+      color: $lightest
+  // projects page ---------------------------------
+  .projects
+    overflow-y: scroll
+    height: 574px
+    p
+      color: $light
+      font-size: 3rem
+  // Contact page ----------------------------------
+  .contact
+    // background-color: $dark
+
+//footer -----------------------------------------------------------
+footer
+  ul
+    height: 100%
+    display: flex
+    list-style: none
+    background-color: white
+    justify-content: center
+    align-items: center
+    li
+      padding: 0.5rem
+      margin: 0 1rem
+      a
+        font-size: 1.5rem
